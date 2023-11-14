@@ -95,6 +95,12 @@ class FoodController: UICollectionViewController {
        4
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = UIViewController()
+        controller.view.backgroundColor = indexPath.section == 0 ? .yellow : .blue
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 || section == 2 {
             return 3
