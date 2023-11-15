@@ -24,7 +24,7 @@ class FoodController: UICollectionViewController {
     // MARK: - Create Compositional Layout
     static func createLayout() -> UICollectionViewCompositionalLayout {
        return  UICollectionViewCompositionalLayout {
-            (sectionNumber, env) -> NSCollectionLayoutSection? in
+        (sectionNumber, env) -> NSCollectionLayoutSection? in
             
            if sectionNumber == 0 {
                
@@ -49,7 +49,6 @@ class FoodController: UICollectionViewController {
                
                let section = NSCollectionLayoutSection(group: group)
                section.contentInsets.leading = 16
-               section.contentInsets.trailing = 16
 
                section.boundarySupplementaryItems = [
                 .init(layoutSize: .init(widthDimension:  .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: categoryHeaderId, alignment: .topLeading)
@@ -149,7 +148,7 @@ class Header: UICollectionReusableView {
 }
 
 // MARK: - Preview
-struct ContentView_Previews: PreviewProvider {
+     struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Container().edgesIgnoringSafeArea(.all)
     }
@@ -164,11 +163,5 @@ struct ContentView_Previews: PreviewProvider {
         func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
         
         typealias UIViewControllerType = UIViewController
-    }
-}
-
-struct contentView: View {
-    var body: some View {
-        Text("Hello World!")
     }
 }
